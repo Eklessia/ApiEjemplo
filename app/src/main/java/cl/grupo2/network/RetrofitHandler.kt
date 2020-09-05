@@ -21,12 +21,11 @@ object RetrofitHandler {
             .create()
 
         return Retrofit.Builder()
-            .baseUrl("https://jsonplaceholder.typicode.com")
+            .baseUrl("https://jsonplaceholder.typicode.com/")
             .client(client)
             .addConverterFactory(GsonConverterFactory.create(gson))
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .build()
-
     }
 
 

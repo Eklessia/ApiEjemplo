@@ -8,9 +8,10 @@ import cl.grupo2.restapidesafio.domain.model.Contacto
 import cl.grupo2.restapidesafio.ui.ListadoContactosFragment
 
 class ContactoAdapter(
-    private val locations: List<Contacto>,
-    private val listener: ListadoContactosFragment
+    private val contactos: List<Contacto>,
+    private val listener: ListadoContactosFragment?
 ) : RecyclerView.Adapter<ContactoVH>() {
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ContactoVH {
         val inflater = LayoutInflater.from(parent.context)
@@ -18,9 +19,9 @@ class ContactoAdapter(
         return ContactoVH(view, listener)
     }
 
-    override fun getItemCount() = locations.size
+    override fun getItemCount() = contactos.size
 
     override fun onBindViewHolder(holder: ContactoVH, position: Int) {
-        holder.bind(locations[position])
+        holder.bind(contactos[position])
     }
 }

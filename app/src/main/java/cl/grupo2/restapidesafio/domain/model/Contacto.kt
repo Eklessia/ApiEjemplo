@@ -1,8 +1,11 @@
 package cl.grupo2.restapidesafio.domain.model
 
+import com.google.gson.annotations.SerializedName
+
+
 data class Contacto(
-    val id: Int,
-    val name: String,
-    val email: String,
-    val phone: String
+    @SerializedName("id") val id: Int,
+    @SerializedName ("name") val name: String,
+    @SerializedName ("email") val email: String,
+    @SerializedName("phone") val phone: String
 )
